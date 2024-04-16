@@ -16,7 +16,7 @@ function Orb() {
 
   return (
     <div>
-      Orb
+      <OrbStyled/>
     </div>
   )
 }
