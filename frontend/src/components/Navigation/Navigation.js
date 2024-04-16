@@ -100,7 +100,7 @@ const NavStyled = styled.nav`
         width: 4px;
         top: 0;
         height: 100%;
-        background-color:#222260;
+        background:#222260;
         border-radius: 0 10px 10px 0;
     }
   }
