@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-import { dollar, trash } from '../../utils/Icons';
-import { calender } from '../../utils/Icons';
-import { comment } from '../../utils/Icons';
+import { dollar, trash } from '../../utils/icons';
+import { calender } from '../../utils/icons';
+import { comment } from '../../utils/icons';
 import Button from '../Button/Button';
 
 function IncomeItem({
