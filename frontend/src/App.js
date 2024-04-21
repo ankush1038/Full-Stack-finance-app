@@ -11,24 +11,22 @@ import { useGlobalContext } from "./context/globalContext";
 function App() {
   const [active, setActive] = useState(1);
 
-
-  const global=useGlobalContext();
+  const global = useGlobalContext();
   console.log(global);
   const displayData = () => {
-    switch(active){
+    switch (active) {
       case 1:
-        return <Dashboard/>;
+        return <Dashboard />;
       case 2:
-        return <Dashboard/>;
+        return <Dashboard />;
       case 3:
-        return <Incomes/>;
+        return <Incomes />;
       case 4:
-        return <Expenses/>;
+        return <Expenses />;
       default:
-        return <Dashboard/>;
+        return <Dashboard />;
     }
   };
-
 
   const orbMemo = useMemo(() => {
     return <Orb />;
