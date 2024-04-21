@@ -1,6 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-import { dollar, trash, calender, comment } from "../../utils/icons";
+import {
+  dollar,
+  trash,
+  calender,
+  comment,
+  money,
+  freelance,
+  stocks,
+  yt,
+  piggy,
+  users,
+  bitcoin,
+  card,
+  food,
+  book,
+  medical,
+  tv,
+  takeaway,
+  clothing,
+  circle,
+} from "../../utils/icons";
 import Button from "../Button/Button";
 
 function IncomeItem({
@@ -14,10 +34,58 @@ function IncomeItem({
   indicatorColor,
   type,
 }) {
+  const expenseCatIcon = () => {
+    switch (category) {
+      case "education":
+        return book;
+      case "groceries":
+        return food;
+      case "health":
+        return medical;
+      case "subscriptions":
+        return tv;
+      case "takeaways":
+        return takeaway;
+      case "clothing":
+        return clothing;
+      case "travelling":
+        return freelance;
+      case "other":
+        return circle;
+      default:
+        return circle;
+    }
+  };
+
+  const categoryIcon = () => {
+    switch (category) {
+      case "salary":
+        return money;
+      case "freelancing":
+        return freelance;
+      case "investiments":
+        return stocks;
+      case "stocks":
+        return users;
+      case "bitcoin":
+        return bitcoin;
+      case "bank":
+        return card;
+      case "youtube":
+        return yt;
+      case "other":
+        return piggy;
+      default:
+        return money;
+    }
+  };
+
   return (
     <div>
       <IncomeItemStyled indicator={indicatorColor}>
-        <div className="icon"></div>
+        <div className="icon">
+          {type === "expense" ? expenseCatIcon() : categoryIcon()}
+        </div>
         <div className="content">
           <h5>{title}</h5>
           <div className="inner-content">
@@ -98,17 +166,17 @@ const IncomeItemStyled = styled.div`
     .inner-content {
       display: flex;
       justify-content: space-between;
-      align-item:center;
+      align-item: center;
       .text {
         display: flex;
         align-items: center;
-        gap:1.5rem;
+        gap: 1.5rem;
         p {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          color:var(--primary-color);
-          opacity:0.8;
+          color: var(--primary-color);
+          opacity: 0.8;
         }
       }
     }
