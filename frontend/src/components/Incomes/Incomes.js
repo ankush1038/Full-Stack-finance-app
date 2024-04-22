@@ -5,10 +5,10 @@ import { useGlobalContext } from "../../context/globalContext";
 import Form from "../Form/Form";
 import IncomeItem from "../IncomeItem/IncomeItem";
 function Incomes() {
-  const { addIncome, incomes, getIncomes } = useGlobalContext();
+  const { addIncome, incomes, getIncomes ,deleteIncome} = useGlobalContext();
 
   useEffect(() => {
-    getIncomes();
+    getIncomes()
   }, []);
   return (
     <IncomesStyled>
@@ -32,6 +32,7 @@ function Incomes() {
                   date={date}
                   category={category}
                   indicatorColor="var(--color-green)"
+                  deleteItem={deleteIncome}
                 />
               );
             })}
@@ -46,7 +47,7 @@ const IncomesStyled = styled.div`
   display: flex;
   overflow: auto;
   .income-content {
-    display:flex;
+    display: flex;
     gap: 2rem;
     .incomes {
       flex: 1;
