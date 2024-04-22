@@ -63,7 +63,7 @@ function IncomeItem({
         return money;
       case "freelancing":
         return freelance;
-      case "investiments":
+      case "investments":
         return stocks;
       case "stocks":
         return users;
@@ -108,6 +108,7 @@ function IncomeItem({
                 color={"#fff"}
                 iColor={"#fff"}
                 hColor={"var(--color-green)"}
+                onClick={() => deleteItem(id)}
               />
             </div>
           </div>

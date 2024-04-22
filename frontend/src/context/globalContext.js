@@ -17,20 +17,23 @@ export const GlobalProvider = ({ children }) => {
       });
   };
 
-  const getIncomes = async () =>{
-    const response = await axios
-      .get(`${BASE_URL}get-incomes`)
-      setIncomes(response.data)
-  }
+  const getIncomes = async () => {
+    const response = await axios.get(`${BASE_URL}get-incomes`);
+    setIncomes(response.data);
+  };
 
-  getIncomes()
+  const deleteIncome = async (id) => {
+    const res = await axios.delete(`${BASE_URL}delete-income/${id}`);
+    getIncomes();
+  };
 
   return (
     <GlobalContext.Provider
       value={{
         addIncome,
         getIncomes,
-        incomes
+        incomes,
+        deleteIncome,
       }}
     >
       {children}
@@ -38,6 +41,6 @@ export const GlobalProvider = ({ children }) => {
   );
 };
 
-export const useGlobalContext=()=>{
-    return useContext(GlobalContext);
-}
+export const useGlobalContext = () => {
+  return useContext(GlobalContext);
+};
