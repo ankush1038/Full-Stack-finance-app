@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { InnerLayout } from "../../styles/Layouts";
 import { useGlobalContext } from "../../context/globalContext";
-import Form from "../Form/Form";
+import Form from "../Form/form";
 import IncomeItem from "../IncomeItem/IncomeItem";
 function Incomes() {
   const { addIncome, incomes, getIncomes } = useGlobalContext();
