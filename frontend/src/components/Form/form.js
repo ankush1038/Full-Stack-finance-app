@@ -4,10 +4,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useGlobalContext } from "../../context/globalContext";
 import Button from "../Button/Button";
-import {plus} from "../../utils/icons"
+import { plus } from "../../utils/icons";
 
 function Form() {
-  const { addIncome,getIncomes } = useGlobalContext();
+  const { addIncome, getIncomes } = useGlobalContext();
   const [inputState, setInputState] = useState({
     title: "",
     amount: "",
@@ -28,7 +28,13 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     addIncome(inputState);
-    getIncomes();
+    setInputState({
+      title: "",
+      amount: "",
+      date: "",
+      category: "",
+      description: "",
+    });
   };
 
   return (
@@ -54,7 +60,7 @@ function Form() {
       <div className="input-control">
         <DatePicker
           id="date"
-          placeholder="Enter a Date"
+          placeholderText="Enter a Date"
           selected={date}
           dateFormat="dd/MM/yyyy"
           onChange={(date) => {
@@ -95,13 +101,13 @@ function Form() {
         ></textarea>
       </div>
       <div className="submit-btn">
-        <Button 
-          name={'Add Income'}
+        <Button
+          name={"Add Income"}
           icon={plus}
-          bg={'var(--color-accent)'}
-          color={'#fff'}
-          bPad={'.8rem 1.6rem'}
-          bRad={'30px'}
+          bg={"var(--color-accent)"}
+          color={"#fff"}
+          bPad={".8rem 1.6rem"}
+          bRad={"30px"}
           onClick={() => {}}
         />
       </div>
@@ -114,12 +120,14 @@ const FormStyled = styled.form`
   flex-direction: column;
   gap: 2rem;
 
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     font-family: inherit;
     font-size: inherit;
     outline: none;
     border: none;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     border: 2px solid #fff;
     background: transparent;
@@ -145,7 +153,8 @@ const FormStyled = styled.form`
     select {
       color: rgba(34, 34, 96, 0.4);
 
-      &:focus, &:active {
+      &:focus,
+      &:active {
         color: rgba(34, 34, 96, 1);
       }
     }
