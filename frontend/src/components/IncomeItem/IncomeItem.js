@@ -22,6 +22,7 @@ import {
   circle,
 } from "../../utils/icons";
 import Button from "../Button/Button";
+import { dateFormat } from "../../utils/dateFormat";
 
 function IncomeItem({
   id,
@@ -79,7 +80,7 @@ function IncomeItem({
         return money;
     }
   };
-
+  console.log('type', type);
   return (
     <div>
       <IncomeItemStyled indicator={indicatorColor}>
@@ -92,7 +93,7 @@ function IncomeItem({
             <div className="text">
               <p>{dollar} {amount}</p>
               <p>
-                {calender} {date}
+                {calender} {dateFormat(date)}
               </p>
               <p>
                 {comment}

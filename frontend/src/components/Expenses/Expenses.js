@@ -25,7 +25,7 @@ function Expenses() {
           </div>
           <div className="incomes">
             {expenses.map((income) => {
-              const { _id, title, amount, date, category, description } =
+              const { _id, title, amount, date, category, description, type } =
                 income;
               return (
                 <IncomeItem
@@ -35,6 +35,7 @@ function Expenses() {
                   description={description}
                   amount={amount}
                   date={date}
+                  type={type}
                   category={category}
                   indicatorColor="var(--color-green)"
                   deleteItem={deleteExpense}
@@ -70,7 +71,7 @@ const ExpenseStyled = styled.div`
     }
   }
   .income-content {
-    display: flex;  
+    display: flex;
     gap: 2rem;
     .incomes {
       flex: 1;

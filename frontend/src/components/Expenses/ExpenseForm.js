@@ -79,13 +79,13 @@ function ExpenseForm() {
           <option value="" disabled>
             Select Option
           </option>
-          <option value="salary">Salary</option>
-          <option value="freelancing">Freelancing</option>
-          <option value="investments">Investments</option>
-          <option value="stocks">Stocks</option>
-          <option value="bitcoin">Bitcoin</option>
-          <option value="bank">Bank</option>
-          <option value="youtube">Youtube</option>
+          <option value="education">Education</option>
+          <option value="groceries">Groceries</option>
+          <option value="health">Health</option>
+          <option value="subscription">Subscription</option>
+          <option value="takeaways">Takeaways</option>
+          <option value="clothing">Clothing</option>
+          <option value="travelling">Travelling</option>
           <option value="other">Other</option>
         </select>
       </div>
@@ -104,11 +104,10 @@ function ExpenseForm() {
         <Button
           name={"Add Expense"}
           icon={plus}
-          bg={"var(--color-accent)"}
-          color={"#fff"}
-          bPad={".8rem 1.6rem"}
-          bRad={"30px"}
-          onClick={() => {}}
+          bPad={'.8rem 1.6rem'}
+          bRad={'30px'}
+          bg={'var(--color-accent)'}
+          color={'#fff'}
         />
       </div>
     </ExpenseFormStyled>
