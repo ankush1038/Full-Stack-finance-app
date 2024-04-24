@@ -27,7 +27,7 @@ exports.addExpense = async (req, res) => {
 exports.getExpense = async (req, res) => {
   try {
     const incomes = await ExpenseSchema.find().sort({ createdAt: -1 });
-    res.status(200).json({ incomes });
+    res.status(200).json(incomes);
   } catch (err) {
     res.status(500).json({ message: "Internal Server Error" });
   }

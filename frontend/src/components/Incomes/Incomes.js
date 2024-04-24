@@ -69,7 +69,7 @@ const IncomesStyled = styled.div`
     }
   }
   .income-content {
-    display: flex;
+    display: flex;  
     gap: 2rem;
     .incomes {
       flex: 1;
