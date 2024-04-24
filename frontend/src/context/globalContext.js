@@ -15,6 +15,7 @@ export const GlobalProvider = ({ children }) => {
       .catch((err) => {
         setError(err.response.data.message);
       });
+      getIncomes();
   };
 
   const getIncomes = async () => {
@@ -27,6 +28,15 @@ export const GlobalProvider = ({ children }) => {
     getIncomes();
   };
 
+
+  const totalIncome=()=>{
+    let totalIncome=0;
+    incomes.forEach((income)=>{
+      totalIncome+=income.amount
+    })
+    return totalIncome;
+  }
+  console.log(totalIncome());
   return (
     <GlobalContext.Provider
       value={{
@@ -34,6 +44,7 @@ export const GlobalProvider = ({ children }) => {
         getIncomes,
         incomes,
         deleteIncome,
+        totalIncome
       }}
     >
       {children}
