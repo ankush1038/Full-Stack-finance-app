@@ -9,7 +9,6 @@ export const GlobalProvider = ({ children }) => {
   const [expenses, setExpenses] = useState([]);
   const [error, setError] = useState(null);
 
-  // Calculate Incomes 
   const addIncome = async (income) => {
     const response = await axios
       .post(`${BASE_URL}add-income`, income)
@@ -32,7 +31,7 @@ export const GlobalProvider = ({ children }) => {
 
   const totalIncome=()=>{
     let totalIncome=0;
-    expenses.forEach((income)=>{
+    incomes.forEach((income)=>{
       totalIncome+=income.amount
     })
     return totalIncome;
