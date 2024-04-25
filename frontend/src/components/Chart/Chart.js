@@ -44,6 +44,7 @@ function Chart() {
           }),
         ],
         backgroundColor: "green",
+        tension: .2
       },
       {
         label: "Expenses",
@@ -54,6 +55,7 @@ function Chart() {
           }),
         ],
         backgroundColor: "red",
+        tension: .2   //for giving curve
       },
     ],
   };
