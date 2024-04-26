@@ -62,8 +62,23 @@ export const GlobalProvider = ({ children }) => {
     expenses.forEach((income)=>{
       totalIncome+=income.amount
     })
+
     return totalIncome;
   }
+
+  const totalBalance=()=>{
+    return totalIncome() - totalExpenses()
+  }
+
+  const transactionHistory = () =>{
+    const  history =[...incomes, ...expenses]//copy elements
+    history.sort((a,b)=>{
+      return new Date(b.createdAt) - new Date(a.createdAt)
+    })
+
+    return history.slice(0, 3)
+  }
+
   // console.log(totalIncome());
   return (
     <GlobalContext.Provider
@@ -77,7 +92,11 @@ export const GlobalProvider = ({ children }) => {
         addExpense,
         getExpenses,
         deleteExpense,
-        totalExpenses
+        totalExpenses,
+        totalBalance,
+        transactionHistory,
+        error,
+        setError
       }}
     >
       {children}
