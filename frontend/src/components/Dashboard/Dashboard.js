@@ -103,7 +103,7 @@ const DashboardStyled = styled.div`
                   justify-content: center;
                   align-items: center;
                   p{
-                    color: var(--green);
+                    color: var(--color-green);
                     opacity: 0.6;
                     font.size: 4.5rem;
                   }
