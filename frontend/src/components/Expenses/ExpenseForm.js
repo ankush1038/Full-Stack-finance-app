@@ -53,7 +53,7 @@ function ExpenseForm() {
       </div>
       <div className="input-control">
         <input
-          type="text"
+          type="number"
           value={amount}
           name={"amount"}
           placeholder={"Expense Amount"}

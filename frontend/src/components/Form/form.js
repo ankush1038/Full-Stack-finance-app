@@ -52,7 +52,7 @@ function Form() {
       </div>
       <div className="input-control">
         <input
-          type="text"
+          type="number"
           value={amount}
           name={"amount"}
           placeholder={"Salary Amount"}
